@@ -1,0 +1,6 @@
+google-adk
+google-cloud-aiplatform
+google-genai
+python-docx
+pypdf
+streamlit

@@ -1,0 +1,19 @@
+Job Title: Sr GenAI Engineer
+Location: Dallas, TX
+Duration: long Term Contract
+ 
+❗ Mandatory Skill must to have:
+GraphDB
+VectorDB
+Neo4J
+RAG
+ 
+Key Responsibilities:
+Design and implement GraphDB and VectorDB solutions to store, query, and retrieve structured and unstructured financial data.
+Build knowledge graph pipelines integrating multiple data sources to support LLM fine-tuning and retrieval-augmented generation workflows.
+Set up scalable data pipelines for model training, embedding generation, and data preprocessing
+Collaborate with AI researchers and ML engineers to prepare data and infrastructure for fine-tuning open-source or proprietary LLMs.
+Deploy and optimize model hosting for fast inference on on-prem or cloud GPU servers.
+Ensure data governance, lineage and compliance with internal and regulatory standards.
+ 
+Share the resume to santhosh.m@smartitframe.com

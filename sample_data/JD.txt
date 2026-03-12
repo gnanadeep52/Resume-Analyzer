@@ -1,0 +1,45 @@
+Job Title: AI Full Stack Engineer
+
+
+Job Description
+
+We are looking for a versatile Full-Stack AI Engineer proficient in backend and frontend development with strong experience in AI/ML technologies. The ideal candidate will work closely with cross-functional teams to develop scalable web applications featuring a Node.js and Python backend, React-based frontend, and AI/ML-powered functionalities leveraging tools like Scikit-learn, TensorFlow, Azure ML, and Lang chain. The role requires a passion for cutting-edge machine learning integrations and delivering high-quality, performant software. AI System
+
+Key Responsibilities
+
+Backend Development:
+
+Design, develop, and maintain scalable backend services and APIs primarily using Node.js with TypeScript and Python.
+
+Integrate AI/ML models and workflows into backend systems to enable intelligent application features.
+
+Ensure robust application architecture, security, and performance optimization.
+
+Frontend Development:
+
+Build responsive, user-friendly interfaces using React and TypeScript following best practices and design principles.
+
+Collaborate with UX/UI designers and product teams to deliver seamless user experiences.
+
+Implement state management, routing, and component libraries to support complex application workflows.
+
+AI/ML Integration:
+
+Develop and deploy machine learning models using Scikit-learn and TensorFlow, with cloud-based orchestration through Azure ML.
+
+Integrate AI functionalities using frameworks like Lang chain and JavaScript-based libraries into web applications.
+
+Collaborate with data scientists and ML engineers to operationalize AI solutions in production-grade applications.
+
+Role Descriptions: We are looking for a versatile Full-Stack AI Engineer proficient in backend and frontend development with strong experience in AIML technologies. The ideal candidate will work closely with cross-functional teams to develop scalable web applications featuring a Node.js and Python backend| React-based frontend| and AIML-powered functionalities leveraging tools like Scikit-learn| TensorFlow| Azure ML| and Langchain. The role requires a passion for cutting-edge machine learning integrations and delivering high-quality| performant software. AI System Key ResponsibilitiesBackend DevelopmentDesign| develop| and maintain scalable backend services and APIs primarily using Node.js with TypeScript and Python.Integrate AIML models and workflows into backend systems to enable intelligent application features.Ensure robust application architecture| security| and performance optimization.Frontend DevelopmentBuild responsive| user-friendly interfaces using React and TypeScript following best practices and design principles.Collaborate with UXUI designers and product teams to deliver seamless user experiences.Implement state management| routing| and component libraries to support complex application workflows.AIML IntegrationDevelop and deploy machine learning models using Scikit-learn and TensorFlow| with cloud-based orchestration through Azure ML.Integrate AI functionalities using frameworks like Langchain and JavaScript-based libraries into web applications.Collaborate with data scientists and ML engineers to operationalize AI solutions in production-grade applications.Collaboration Best PracticesWork closely with product managers| designers| and other engineers in an Agile environment.Write clean| maintainable| and well-documented code with unit and integration tests.Participate in code reviews| design discussions| and continuous improvement initiatives
+
+Essential Skills: We are looking for a versatile Full-Stack AI Engineer proficient in backend and frontend development with strong experience in AIML technologies. The ideal candidate will work closely with cross-functional teams to develop scalable web applications featuring a Node.js and Python backend| React-based frontend| and AIML-powered functionalities leveraging tools like Scikit-learn| TensorFlow| Azure ML| and Langchain. The role requires a passion for cutting-edge machine learning integrations and delivering high-quality| performant software. AI System Key ResponsibilitiesBackend DevelopmentDesign| develop| and maintain scalable backend services and APIs primarily using Node.js with TypeScript and Python.Integrate AIML models and workflows into backend systems to enable intelligent application features.Ensure robust application architecture| security| and performance optimization.Frontend DevelopmentBuild responsive| user-friendly interfaces using React and TypeScript following best practices and design principles.Collaborate with UXUI designers and product teams to deliver seamless user experiences.Implement state management| routing| and component libraries to support complex application workflows.AIML IntegrationDevelop and deploy machine learning models using Scikit-learn and TensorFlow| with cloud-based orchestration through Azure ML.Integrate AI functionalities using frameworks like Langchain and JavaScript-based libraries into web applications.Collaborate with data scientists and ML engineers to operationalize AI solutions in production-grade applications.Collaboration Best PracticesWork closely with product managers| designers| and other engineers in an Agile environment.Write clean| maintainable| and well-documented code with unit and integration tests.Participate in code reviews| design discussions| and continuous improvement initiatives
+
+Desirable Skills:
+
+Keyword:
+
+Skills: Node.js, ReactJS
+
+Experience Required: 8-10
+
