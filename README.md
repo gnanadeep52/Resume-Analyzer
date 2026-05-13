@@ -1,52 +1,30 @@
-# Resume Analyzer Agent
+# Agentic Resume Analyzer — LLM-Powered JD Matching & Resume Tailoring
 
-A data‑science powered pipeline that ingests job descriptions and resumes and produces a tailored resume
-highlighting gaps, human‑focused bullet points, and ATS‑compliant formatting. The architecture is built
-as a sequence of specialized agents orchestrated by a SequentialAgent.
+A **multi-agent AI pipeline** that ingests a job description and a resume, identifies skill gaps, generates ATS-optimized bullet points, validates consistency, and assembles a fully tailored resume — all orchestrated by a `SequentialAgent` with a Streamlit UI.
 
-## Features
+> **Skills demonstrated:** Agentic AI · Multi-agent orchestration · LLM pipelines · ATS optimization · State management · Streamlit · LangChain
 
-* **Extraction Agent** – parses skills and timelines from resume and JD.
-* **Gap Analysis Agent** – identifies mismatches between candidate background and job requirements.
-* **Generation Agent** – crafts impactful, human‑readable bullet points.
-* **Validation Agent** – performs ATS checks, consistency verifications and date validations.
-* **Integration Agent** – assembles the final document.
+---
 
-## Quick start
+## What It Does
 
-1. Clone repository and create a Python virtual environment.
-2. Install dependencies:
+Paste a job description + your resume. The system runs 5 specialized agents in sequence:
 
-```bash
-pip install -r requirements.txt
-```
+| Agent | What it does |
+|-------|--------------|
+| **Extraction Agent** | Parses skills, experience timelines, and requirements from both resume and JD |
+| **Gap Analysis Agent** | Identifies mismatches between candidate background and job requirements |
+| **Generation Agent** | Crafts impactful, human-readable bullet points targeting the JD |
+| **Validation Agent** | Runs ATS checks, date consistency verification, and keyword coverage |
+| **Integration Agent** | Assembles the final tailored resume document |
 
-3. Launch the main script with your inputs:
+---
 
-```bash
-python main.py --resume resume.pdf --jd jd.txt
-```
-
-(Adjust flags to your deployment; `main.py` exposes a CLI.)
-
-## Project Structure
-
-```
-agents/           # individual agent implementations
-llm/              # LLM client and schemas
-pipeline/         # orchestration code
-tools/            # helpers for parsing, analysis, etc.
-sample_data/      # example job description and resume fragments
-state/            # session state management
-```
-
-## Flow Chart
-
+## Architecture
 
 ```mermaid
-
 flowchart TD
-    Start((User Input)):::input --> Root[Root: SequentialAgent]:::root
+    Start((User Input\nResume + JD)):::input --> Root[Root: SequentialAgent]:::root
 
     subgraph Pipeline["Linear Orchestration"]
         direction TB
@@ -57,13 +35,11 @@ flowchart TD
         S4 --> S5[Integration Agent]:::integrate
     end
 
-    %% Step outputs / artifacts
     S1 -.-> T1(["Skills & Timeline"]):::artifact
-    S2 -.-> T2(["JD vs Resume Gap"]):::artifact
+    S2 -.-> T2(["JD vs Resume Gaps"]):::artifact
     S3 -.-> T3(["Human-Impact Bullets"]):::artifact
-    S4 -.-> T4(["ATS + Consistency + Timeframe Checks"]):::artifact
+    S4 -.-> T4(["ATS + Consistency + Date Checks"]):::artifact
 
-    %% Shared state
     State[(Session State)]:::state
     S1 -.-> State
     S2 -.-> State
@@ -73,18 +49,77 @@ flowchart TD
 
     S5 --> End((Tailored Resume)):::output
 
-    %% Color Classes
     classDef input fill:#E3F2FD,stroke:#1E88E5,color:#0D47A1,stroke-width:2px;
     classDef root fill:#E8F5E9,stroke:#43A047,color:#1B5E20,stroke-width:2px;
-
     classDef extract fill:#FFF3E0,stroke:#FB8C00,color:#E65100,stroke-width:2px;
     classDef gap fill:#F3E5F5,stroke:#8E24AA,color:#4A148C,stroke-width:2px;
     classDef generate fill:#E0F7FA,stroke:#00ACC1,color:#006064,stroke-width:2px;
     classDef validate fill:#FFFDE7,stroke:#FDD835,color:#F57F17,stroke-width:2px;
     classDef integrate fill:#EDE7F6,stroke:#5E35B1,color:#311B92,stroke-width:2px;
-
     classDef artifact fill:#ECEFF1,stroke:#546E7A,color:#263238,stroke-dasharray: 5 5;
     classDef state fill:#F1F8E9,stroke:#7CB342,color:#33691E,stroke-width:2px;
-
     classDef output fill:#E8EAF6,stroke:#3949AB,color:#1A237E,stroke-width:2px;
-  ```
+```
+
+---
+
+## Tech Stack
+
+| Component            | Technology |
+|----------------------|------------|
+| Agent Orchestration  | SequentialAgent (LangChain) |
+| LLM Layer            | Configurable via `llm/` module |
+| State Management     | Custom session state (`state/`) |
+| Tools                | Parsing, analysis, ATS scoring (`tools/`) |
+| UI                   | Streamlit (`ui.py`) |
+| Language             | Python 3.10+ |
+
+---
+
+## Project Structure
+
+```
+Resume-Analyzer/
+├── main.py             # CLI entry point with --resume and --jd flags
+├── ui.py               # Streamlit interface for interactive use
+├── agents/             # 5 specialized agent implementations
+├── llm/                # LLM client configuration and schemas
+├── pipeline/           # SequentialAgent orchestration logic
+├── tools/              # Parsing, gap analysis, ATS scoring helpers
+├── state/              # Session state management across agents
+├── sample_data/        # Example JD and resume fragments for testing
+└── requirements.txt
+```
+
+---
+
+## Setup & Run
+
+```bash
+# 1. Clone and install
+git clone https://github.com/gnanadeep52/Resume-Analyzer.git
+cd Resume-Analyzer
+pip install -r requirements.txt
+
+# 2. Set your LLM API key in .env
+echo "GOOGLE_API_KEY=your_api_key" >> .env
+
+# Option A: CLI
+python main.py --resume sample_data/resume.pdf --jd sample_data/jd.txt
+
+# Option B: Streamlit UI
+streamlit run ui.py
+```
+
+---
+
+## Key Design Decisions
+
+**Why 5 separate agents instead of one prompt?**  
+Each agent has a single, auditable responsibility. Extraction errors don’t contaminate generation; validation runs on final output rather than mid-stream. This mirrors production agentic systems where each step is independently testable and replaceable.
+
+**Why session state across agents?**  
+The shared `state/` module lets downstream agents (e.g., Integration) access outputs from all upstream agents (extracted skills, gap list, generated bullets) without re-running them — same pattern as AWS Step Functions state passing.
+
+**Why include ATS validation as a separate agent?**  
+ATS systems filter ~75% of resumes before human review. Making validation an explicit pipeline stage — not an afterthought — ensures keyword coverage, formatting compliance, and date consistency are checked systematically.
