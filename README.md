@@ -1,5 +1,4 @@
-# Agentic Resume Analyzer — LLM-Powered JD Matching & Resume Tailoring
-
+# Agentic Resume Analyzer — LLM-Powered JD Matching & Tailored Resumes
 A **multi-agent AI pipeline** that ingests a job description and a resume, identifies skill gaps, generates ATS-optimized bullet points, validates consistency, and assembles a fully tailored resume — all orchestrated by a `SequentialAgent` with a Streamlit UI.
 
 > **Skills demonstrated:** Agentic AI · Multi-agent orchestration · LLM pipelines · ATS optimization · State management · Streamlit · LangChain
